@@ -13,6 +13,6 @@ Welcome to my personal portfolio website! This is a space where I showcase my wo
 
 ## Acknowledgments
 
-This portfolio website was forked from the [Zenorocha Portfolio](https://github.com/zenorocha/portfolio) and customized for my personal use. Special thanks to [Zeno Rocha](https://github.com/zenorocha) for creating the original project.
+Special thanks to [Zeno Rocha](https://github.com/zenorocha) for creating the original project.
 
 

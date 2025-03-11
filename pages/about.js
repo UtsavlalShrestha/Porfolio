@@ -94,7 +94,7 @@ function About(props) {
             Copy Bio
           </ButtonPrimary>
           <span style={{ margin: '0 20px 0 10px' }}>•</span>
-          <ButtonPrimary
+          {/* <ButtonPrimary
             as="a"
             download
             role="button"
@@ -106,7 +106,7 @@ function About(props) {
           >
             <Lottie lottieRef={downloadRef} style={iconStyle} animationData={downloadIcon} loop={false} autoplay={false} />
             Download Resume
-          </ButtonPrimary>
+          </ButtonPrimary> */}
         </ButtonsContainer>
       </div>
     )

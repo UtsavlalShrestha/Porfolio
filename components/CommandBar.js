@@ -101,6 +101,15 @@ export default function CommandBar(props) {
       icon: <Lottie lottieRef={aboutRef} style={iconSize} animationData={aboutIcon} loop={false} autoplay={false} />,
     },
     {
+      id: 'work',
+      name: 'Work',
+      shortcut: ['g', 'u'],
+      keywords: 'go-uses',
+      section: 'Go To',
+      perform: () => router.push('/work'),
+      icon: <Lottie lottieRef={usesRef} style={iconSize} animationData={usesIcon} loop={false} autoplay={false} />,
+    },
+    {
       id: 'projects',
       name: 'Projects',
       shortcut: ['g', 'p'],
@@ -109,24 +118,7 @@ export default function CommandBar(props) {
       perform: () => router.push('/projects'),
       icon: <Lottie lottieRef={projectsRef} style={iconSize} animationData={projectsIcon} loop={false} autoplay={false} />,
     },
-    {
-      id: 'uses',
-      name: 'Uses',
-      shortcut: ['g', 'u'],
-      keywords: 'go-uses',
-      section: 'Go To',
-      perform: () => router.push('/uses'),
-      icon: <Lottie lottieRef={usesRef} style={iconSize} animationData={usesIcon} loop={false} autoplay={false} />,
-    },
-    {
-      id: 'reminder',
-      name: 'Reminder',
-      shortcut: ['g', 'r'],
-      keywords: 'go-reminder',
-      section: 'Go To',
-      perform: () => router.push('/reminder'),
-      icon: <Lottie lottieRef={reminderRef} style={iconSize} animationData={reminderIcon} loop={false} autoplay={false} />,
-    },
+
   ]
 
   return (
