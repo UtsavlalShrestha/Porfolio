@@ -5,7 +5,7 @@ export default function Footer() {
   const links = [
     {
       title: 'Email',
-      url: '/contact',
+      url: 'mailto:utsavlalshrestha@gmail.com',
       icon: 'ri-mail-line',
     },
     {

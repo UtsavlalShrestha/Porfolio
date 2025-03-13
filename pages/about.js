@@ -1,19 +1,17 @@
-import { styled } from '../stitches.config'
-import React from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import { parseISO, format, intervalToDuration } from 'date-fns'
-import Base from '../layouts/Base'
-import { ButtonPrimary } from '../components/ButtonPrimary'
-import Toast from '../components/Toast'
-import stripHtml from '../lib/strip-html'
-import items from '../data/about'
-import copyBioIcon from '../public/static/icons/copy-bio.json'
-import downloadIcon from '../public/static/icons/download.json'
+import { styled } from '../stitches.config';
+import React from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import { parseISO, format, intervalToDuration } from 'date-fns';
+import Base from '../layouts/Base';
+import { ButtonPrimary } from '../components/ButtonPrimary';
+import Toast from '../components/Toast';
+import items from '../data/about';
+import copyBioIcon from '../public/static/icons/copy-bio.json';
 import dynamic from 'next/dynamic';
 
-
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+
 export async function getStaticProps() {
   const meta = {
     title: 'About // Utsav Shrestha',
@@ -23,18 +21,18 @@ export async function getStaticProps() {
     image: '/static/images/avatar.jpg',
     primaryColor: 'pink',
     secondaryColor: 'purple',
-  }
+  };
 
-  return { props: meta }
+  return { props: meta };
 }
 
 function About(props) {
-  const { title, description, image } = props
-  const [toastTitle, setToastTitle] = React.useState('')
-  const [toastDescription, setToastDescription] = React.useState('')
-  const [showToast, setShowToast] = React.useState(false)
-  const copyBioRef = React.useRef()
-  const downloadRef = React.useRef()
+  const { title, description, image } = props;
+  const [toastTitle, setToastTitle] = React.useState('');
+  const [toastDescription, setToastDescription] = React.useState('');
+  const [showToast, setShowToast] = React.useState(false);
+  const copyBioRef = React.useRef();
+  const downloadRef = React.useRef();
 
   const renderIntro = () => {
     return (
@@ -61,23 +59,24 @@ function About(props) {
             I started my journey in tech with a passion for data and software engineering. Currently, I'm a Data Aanalytics/Engineering intern at LIS Nepal.
           </Paragraph>
           <Paragraph>
-          I'm originally from Nepal, currently living in Kathmandu and a soon to be a graduate in Computer Science and Information Technology       </Paragraph>
+            I'm originally from Nepal, currently living in Kathmandu and a soon to be a graduate in Computer Science and Information Technology.
+          </Paragraph>
           <Paragraph>
-          In my free time, you’ll find me diving into different historical documentaries, exploring new tech stacks or binge watching Fireship's contents.
+            In my free time, you’ll find me diving into different historical documentaries, exploring new tech stacks or binge watching Fireship's contents.
           </Paragraph>
         </Section>
       </Container>
-    )
-  }
+    );
+  };
 
   const renderBio = () => {
-    const btnStyle = { display: 'inline-flex', justifyContent: 'center', alignItems: 'center' }
-    const iconStyle = { width: 24, height: 24, marginRight: 8 }
+    const btnStyle = { display: 'inline-flex', justifyContent: 'center', alignItems: 'center' };
+    const iconStyle = { width: 24, height: 24, marginRight: 8 };
 
     return (
       <div>
         <p>
-        This is my professional bio summarizing my strengths and fields of interests.
+          This is my professional bio summarizing my strengths and fields of interests.
         </p>
         <blockquote>
           <p>{description}</p>
@@ -94,23 +93,51 @@ function About(props) {
             Copy Bio
           </ButtonPrimary>
           <span style={{ margin: '0 20px 0 10px' }}>•</span>
-          {/* <ButtonPrimary
-            as="a"
-            download
-            role="button"
-            href="/static/resume_i.pdf"
-            style={btnStyle}
-            onClick={downloadHeadshot}
-            onMouseEnter={() => downloadRef.current?.play()}
-            onMouseLeave={() => downloadRef.current?.stop()}
-          >
-            <Lottie lottieRef={downloadRef} style={iconStyle} animationData={downloadIcon} loop={false} autoplay={false} />
-            Download Resume
-          </ButtonPrimary> */}
         </ButtonsContainer>
       </div>
-    )
-  }
+    );
+  };
+
+  const renderTools = () => {
+    const tools = [
+      { name: 'SQL', description: 'For querying and managing databases efficiently.', logo: null },
+      { name: 'Python', description: 'For data processing, scripting, and automation.', logo: null },
+      { name: 'Power BI', description: 'For interactive data visualization and business intelligence.', logo: null },
+      { name: 'Docker', description: 'For containerizing applications and ensuring consistency.', logo: null },
+      { name: 'Astronomer', description: 'For managing and scaling Apache Airflow workflows.', logo: null },
+      { name: 'Apache Airflow', description: 'For orchestrating complex data pipelines.', logo: null },
+      { name: 'Google Cloud Platform (GCP)', description: 'For scalable cloud infrastructure.', logo: null },
+      { name: 'BigQuery', description: 'For large-scale data analytics and warehousing.', logo: null },
+      { name: 'Git', description: 'For version control and collaborative development.', logo: null },
+    ];
+
+    return (
+      <div>
+        <p>
+          Here are some of the tools and technologies I use to build efficient and scalable data solutions.
+        </p>
+        <ToolsList>
+          {tools.map((tool, index) => (
+            <ToolItem key={index}>
+              {tool.logo && (
+                <ToolLogo>
+                  <Image
+                    src={tool.logo}
+                    alt={`${tool.name} logo`}
+                    width={32}
+                    height={32}
+                    style={{ marginRight: '8px' }}
+                  />
+                </ToolLogo>
+              )}
+              <ToolName>{tool.name}</ToolName>
+              <ToolDescription>{tool.description}</ToolDescription>
+            </ToolItem>
+          ))}
+        </ToolsList>
+      </div>
+    );
+  };
 
   const renderAll = () => {
     return items.map((item, index) => {
@@ -135,43 +162,43 @@ function About(props) {
             <span>{getDuration(item.startDate, item.endDate)}</span>
           </p>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   const getDuration = (startDate, endDate) => {
     const durationObj = intervalToDuration({
       start: parseISO(startDate),
       end: endDate ? parseISO(endDate) : new Date(),
-    })
+    });
 
-    let durationStr = ''
+    let durationStr = '';
 
     if (durationObj.years > 1) {
-      durationStr = `${durationObj.years} yrs `
+      durationStr = `${durationObj.years} yrs `;
     } else if (durationObj.years === 1) {
-      durationStr = `${durationObj.years} yr `
+      durationStr = `${durationObj.years} yr `;
     }
 
-    durationStr += `${durationObj.months} mos`
+    durationStr += `${durationObj.months} mos`;
 
-    return durationStr
-  }
+    return durationStr;
+  };
 
   const downloadHeadshot = () => {
-    setToastTitle('Downloading...')
-    setToastDescription('You can now hire me :)')
-    setShowToast(true)
-  }
+    setToastTitle('Downloading...');
+    setToastDescription('You can now hire me :)');
+    setShowToast(true);
+  };
 
-  const copyBio = e => {
-    e.preventDefault()
-    navigator.clipboard.writeText(description)
+  const copyBio = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(description);
 
-    setToastTitle('Copied :D')
-    setToastDescription('You can now paste it anywhere.')
-    setShowToast(true)
-  }
+    setToastTitle('Copied :D');
+    setToastDescription('You can now paste it anywhere.');
+    setShowToast(true);
+  };
 
   return (
     <>
@@ -188,6 +215,9 @@ function About(props) {
       <h2>Bio</h2>
       {renderBio()}
 
+      <h2>Tools</h2>
+      {renderTools()}
+
       {/* <h2>Career</h2>
       {renderAll()} */}
 
@@ -199,7 +229,7 @@ function About(props) {
         setShowToast={setShowToast}
       />
     </>
-  )
+  );
 }
 
 const Container = styled('div', {
@@ -207,23 +237,49 @@ const Container = styled('div', {
   flexDirection: 'column',
   justifyContent: 'space-between',
   '@bp2': { flexDirection: 'row' },
-})
+});
 
 const Paragraph = styled('p', {
   '@bp2': { margin: '15px 0' },
-})
+});
 
 const ButtonsContainer = styled('p', {
   display: 'flex',
   alignItems: 'center',
-})
+});
 
 const Section = styled('div', {
   marginTop: '0px',
   width: 'auto',
   '@bp2': { width: '48%' },
-})
+});
 
-About.Layout = Base
+const ToolsList = styled('ul', {
+  listStyle: 'none',
+  padding: 0,
+  marginTop: '16px',
+  color: '#ccc',
+});
 
-export default About
+const ToolItem = styled('li', {
+  marginBottom: '12px',
+  display: 'flex',
+  alignItems: 'center',
+});
+
+const ToolLogo = styled('span', {
+  marginRight: '8px',
+});
+
+const ToolName = styled('strong', {
+  color: '#fff',
+  marginRight: '8px',
+});
+
+const ToolDescription = styled('span', {
+  color: '#8f9ba8',
+});
+
+About.Layout = Base;
+
+export default About;

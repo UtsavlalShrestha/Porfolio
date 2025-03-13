@@ -1,22 +1,30 @@
-import { Resend } from 'resend'
-import EmailTemplate from '../../components/EmailTemplate'
-const resend = new Resend(process.env.RESEND_API_KEY)
+import { Resend } from 'resend';
 
 export default async function sendEmail(req, res) {
-  try {
-    const data = req.body
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method not allowed' });
+  }
 
-    await resend.sendEmail({
-      from: 'utsavshrestha59.com.np <website@utsavshrestha59.com.np>',
-      to: 'shresthautsav18@gmail.com',
+  try {
+    console.log('Request body:', req.body);
+    const data = req.body;
+
+    if (!data.name || !data.email || !data.message) {
+      return res.status(400).json({ message: 'Missing required fields' });
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const result = await resend.emails.send({
+      from: 'website@utsavshrestha59.com.np',
+      to: 'utsavlalshrestha@gmail.com',
       replyTo: data.email,
       subject: `${data.name} - via utsavshrestha59.com.np`,
-      react: <EmailTemplate {...data} />,
-    })
-
-    res.status(200).json({ message: 'Email sent' })
+      text: `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}`, // Plain text
+    });
+    console.log('Email sent successfully:', result);
+    res.status(200).json({ message: 'Email sent' });
   } catch (e) {
-    asasasas
-    res.status(500).json({ message: e.message })
+    console.error('Failed to send email:', e);
+    res.status(500).json({ message: e.message || 'Internal server error' });
   }
 }
