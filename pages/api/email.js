@@ -14,6 +14,7 @@ export default async function sendEmail(req, res) {
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
+    console.log('RESEND_API_KEY in production:', process.env.RESEND_API_KEY);
     const result = await resend.emails.send({
       from: 'website@utsavshrestha59.com.np',
       to: 'utsavlalshrestha@gmail.com',

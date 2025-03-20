@@ -81,7 +81,7 @@ function About(props) {
         <blockquote>
           <p>{description}</p>
         </blockquote>
-        <ButtonsContainer>
+        {/* <ButtonsContainer>
           <ButtonPrimary
             as="button"
             style={btnStyle}
@@ -93,7 +93,7 @@ function About(props) {
             Copy Bio
           </ButtonPrimary>
           <span style={{ margin: '0 20px 0 10px' }}>•</span>
-        </ButtonsContainer>
+        </ButtonsContainer> */}
       </div>
     );
   };
