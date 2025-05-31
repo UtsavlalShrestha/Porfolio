@@ -9,7 +9,7 @@ const items = [
         'Automated data extraction processes from YAML file to existing excel documentation,reducing manual intervention by 80%.',
         'Developed ETL pipelines using SQL and Airflow for seamless data integration, transformation, and migration.',
         'Created Power BI dashboards for annual reporting, optimizing data visualization.',
-        'Skills: SQL · Python ·BigQuery · Airflow · Power BI · Data warehousing · Snowflake',
+        'Skills: SQL · Python · BigQuery · Airflow · Power BI · Data warehousing · Snowflake',
       ],
     },
     {

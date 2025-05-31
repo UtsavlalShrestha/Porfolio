@@ -83,7 +83,7 @@
             </FormGroup>
             <FormGroup>
               <Label htmlFor="message">Message</Label>
-              <Textarea id="message" placeholder="How can I help you?" rows="4" required />
+              <Textarea id="message" placeholder="Can you see me?" rows="4" required />
             </FormGroup>
             <FormGroup>
               <Button type="submit" variant="send">Send</Button>
