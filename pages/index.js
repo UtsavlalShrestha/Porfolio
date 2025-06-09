@@ -13,7 +13,7 @@ const DynamicFooter = dynamic(() => import('../components/Footer'), { ssr: false
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Utsav Shrestha',
+      title: 'Utsav Lal Shrestha',
       description: 'Exploring the vast realm of data and its endless possibilities',
       image: '/static/images/avatar.jpg',
     },
@@ -47,7 +47,7 @@ export default function Index(props) {
           <PostContainer>
             <div>
               <h1>
-                Utsav <span style={{ fontSize: '0.6em' }}>Lal</span> Shrestha
+                {title}
               </h1>
               <p>
                 <strong>Software Intern @ {' '}
