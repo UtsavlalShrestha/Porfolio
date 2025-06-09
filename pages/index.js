@@ -46,7 +46,9 @@ export default function Index(props) {
         <PostContent>
           <PostContainer>
             <div>
-              <h1>{title}</h1>
+              <h1>
+                Utsav <span style={{ fontSize: '0.6em' }}>Lal</span> Shrestha
+              </h1>
               <p>
                 <strong>Software Intern @ {' '}
                   <a href="/" target="_parent">LIS Nepal</a>
