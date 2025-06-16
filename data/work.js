@@ -12,7 +12,7 @@ const items = [
       jobTitle: 'Data and Analytics Engineer Intern/Trainee',
       company: 'LIS Nepal',
       startDate: '2024-11-24',
-      endDate: '2024-5-24',
+      endDate: '2025-05-24',
       location: 'Lalitpur, Nepal',
       description: [
         'Migrated data from Oracle databases to BigQuery, improving reporting and analytics processes.',
