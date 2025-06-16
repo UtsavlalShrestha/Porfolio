@@ -5,7 +5,7 @@ const items = [
       startDate: '2025-06-01',
       location: 'Lalitpur, Nepal',
       description: [
-
+        'Skills: ETL · SQL · Python · BigQuery · Airflow · Power BI · Data warehousing · Snowflake',
       ],
     },
     {
