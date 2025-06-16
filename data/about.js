@@ -1,8 +1,15 @@
 const items = [
   {
-    jobTitle: 'Data Aanalytics/Engineering Intern',
+    jobTitle: 'Associate Data and Analytics Engineer',
+    company: 'LIS Nepal',
+    startDate: '2025-06-01',
+    location: 'Lalitpur, Nepal',
+  },  
+  {
+    jobTitle: 'Data and Analytics Engineering Intern/Trainee',
     company: 'LIS Nepal',
     startDate: '2024-11-24',
+    endDate: '2025-05-24',
     location: 'Lalitpur, Nepal',
   },
   {

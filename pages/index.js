@@ -50,8 +50,8 @@ export default function Index(props) {
                 {title}
               </h1>
               <p>
-                <strong>Software Intern @ {' '}
-                  <a href="/" target="_parent">LIS Nepal</a>
+                <strong>Associate Data and Analytics Engineer @ {' '}
+                  <a href="/" target="_parent">Ycotek</a>
                 </strong><br />
                 {description}
               </p>

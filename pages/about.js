@@ -56,10 +56,10 @@ function About(props) {
             }}
           >
             <strong>Hi, I'm Utsav Shrestha, </strong>
-            I started my journey in tech with a passion for data and software engineering. Currently, I'm a Data Aanalytics/Engineering intern at LIS Nepal.
+            I started my journey in tech with a passion for data and software engineering. Currently, I'm a Associate Data and Analytics Engineer at Ycotek.
           </Paragraph>
           <Paragraph>
-            I'm originally from Nepal, currently living in Kathmandu and a soon to be a graduate in Computer Science and Information Technology.
+            Originally from Nepal, currently living in Kathmandu and a soon to be a graduate in Computer Science and Information Technology.
           </Paragraph>
           <Paragraph>
             In my free time, you’ll find me diving into different historical documentaries, exploring new tech stacks or binge watching Fireship's contents.

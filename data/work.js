@@ -1,8 +1,18 @@
 const items = [
     {
-      jobTitle: 'Data Engineer Intern',
+      jobTitle: 'Associate Data and Analytics Engineer',
+      company: 'Ycotek',
+      startDate: '2025-06-01',
+      location: 'Lalitpur, Nepal',
+      description: [
+
+      ],
+    },
+    {
+      jobTitle: 'Data and Analytics Engineer Intern/Trainee',
       company: 'LIS Nepal',
       startDate: '2024-11-24',
+      endDate: '2024-5-24',
       location: 'Lalitpur, Nepal',
       description: [
         'Migrated data from Oracle databases to BigQuery, improving reporting and analytics processes.',
