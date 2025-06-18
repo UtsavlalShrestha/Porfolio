@@ -31,7 +31,7 @@ export default function Index(props) {
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />    
         <meta content="Utsav Shrestha" property="og:title" />
-        <meta content="https://utsavshrestha59.com.np" property="og:url" />
+        <meta content="https://utsav-shrestha.com.np" property="og:url" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -50,7 +50,7 @@ export default function Index(props) {
                 {title}
               </h1>
               <p>
-                <strong>Associate Data and Analytics Engineer @ {' '}
+                <strong>Associate Data & Analytics Engineer @ {' '}
                   <a href="/" target="_parent">Ycotek</a>
                 </strong><br />
                 {description}
